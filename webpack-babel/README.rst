@@ -8,6 +8,11 @@ JQuery is used to send the ajax request and manipulate the html.
 
 Build
 ============
+To install the dependencies run
+::
+
+    $ npm install
+
 
 To build and deploy a minified version run
 
