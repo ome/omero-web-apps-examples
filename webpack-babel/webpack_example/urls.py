@@ -15,25 +15,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.conf.urls import patterns
+from django.conf.urls import url
 
-from omeroweb.decorators import login_required
-import omero
+import views
 
-from version import __version__
-
-APP_PREFIX = "webpack_example"
-WEB_API_VERSION = 0
-
-
-@login_required()
-def index(request, conn=None, **kwargs):
-    # pass on version to rendered template
-    params = {'VERSION': __version__}
-
-    return render(
-        request, APP_PREFIX + '/index.html',
-        {'params': params,
-        APP_PREFIX + '_url_suffix': u"?_" + APP_PREFIX + "-%s" % __version__}
-    )
+urlpatterns = patterns('django.views.generic.simple',
+                       url(r'^$', views.index, name='index'))

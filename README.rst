@@ -3,31 +3,20 @@ OMERO.web-apps-examples
 
 Example setups for web apps
 
+
+
 Requirements
 ============
 
-* OMERO 5.4.x or newer.
+* OMERO 5.4.x or newer (incl. web).
+
+
 
 Build
-=====
+============
 
-In order to build you need:
+For building look at the READMEs of the respective setup/folder
 
-* nodejs version 6.x
-* npm version equal or greater to 3.0!
-
-To build an uncompressed version, run:
-
-::
-
-    $ npm run debug
-
-
-To build an uglified version, run:
-
-::
-
-    $ npm run prod
 
 
 More detailed resources on how to create a web app and development setup can be found at:

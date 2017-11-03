@@ -22,5 +22,5 @@ from django.apps import AppConfig
 
 
 class WebpackExampleAppConfig(AppConfig):
-    name = "web_app_webpack"
-    label = "web-app-webpack"
+    name = "webpack_example"
+    label = "webpack-example"
