@@ -15,28 +15,10 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-
-def get_version(version=None):
-
-    """
-    Returns a PEP 386-compliant version number.
-    See https://www.python.org/dev/peps/pep-0440/
-    """
-
-    version = get_full_version(version)
-    parts = 3
-    res = '.'.join(str(x) for x in version[:parts])
-    if len(version) > 3:
-        res = "%s%s" % (res, version[3])
-    return str(res)
+from react_example.utils import get_version
 
 
-def get_full_version(value=None):
+VERSION = (0, 0, 1)
 
-    """
-    Returns a tuple of the version.
-    """
 
-    if value is None:
-        from version import VERSION as value  # noqa
-    return value
+__version__ = get_version(VERSION)

@@ -1,0 +1,19 @@
+/* add your css */
+body {
+    text-align: center;
+    background-image: url('images/ome-icon-opacity.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#app table {
+    width: 100%;
+}
+
+#app thead {
+    font-weight: bold;
+}
+#app td {
+    max-width: 300px;
+    overflow-x: hidden;
+}

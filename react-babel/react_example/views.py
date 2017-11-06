@@ -15,28 +15,26 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+from django.shortcuts import render
+from django.core.urlresolvers import reverse
 
-def get_version(version=None):
+from omeroweb.decorators import login_required
 
-    """
-    Returns a PEP 386-compliant version number.
-    See https://www.python.org/dev/peps/pep-0440/
-    """
+from version import __version__
 
-    version = get_full_version(version)
-    parts = 3
-    res = '.'.join(str(x) for x in version[:parts])
-    if len(version) > 3:
-        res = "%s%s" % (res, version[3])
-    return str(res)
+APP_PREFIX = "react_example"
+WEB_API_VERSION = 0
 
 
-def get_full_version(value=None):
+@login_required()
+def index(request, conn=None, **kwargs):
+    # pass on version to rendered template
+    params = {'VERSION': __version__}
+    params['WEB_API'] = reverse(
+        'api_base', kwargs={'api_version': WEB_API_VERSION})
 
-    """
-    Returns a tuple of the version.
-    """
-
-    if value is None:
-        from version import VERSION as value  # noqa
-    return value
+    return render(
+        request, APP_PREFIX + '/index.html',
+        {'params': params, APP_PREFIX + '_url_suffix': u"?_"
+            + APP_PREFIX + "-%s" % __version__}
+    )
