@@ -7,14 +7,14 @@ html {
     height: 100%;
 }
 
-#projects table {
+.projects table {
     width: 100%;
 }
 
-#projects thead {
+.projects thead {
     font-weight: bold;
 }
-#projects td {
+.projects td {
     max-width: 300px;
     overflow-x: hidden;
 }
