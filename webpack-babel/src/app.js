@@ -5,6 +5,13 @@ require('./../css/images/ome-icon-opacity.png');
 // deps
 import $ from "jquery";
 
+/* IMPORTANT:
+ * we have to set the public path here to include any potential prefix
+ * has to happen before the bootstrap!
+ */
+let prefix = typeof window.URI_PREFIX === 'string' || "";
+__webpack_public_path__ = prefix + '/static/webpack_example/';
+
 // main code
 let $projects = $('#projects');
 let projectRequestUrl = window.PARAMS.WEB_API + "/m/projects?limit=10";

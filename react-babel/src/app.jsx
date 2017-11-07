@@ -86,4 +86,11 @@ class App extends React.Component {
     }
 }
 
+/* IMPORTANT:
+ * we have to set the public path here to include any potential prefix
+ * has to happen before the bootstrap!
+ */
+let prefix = typeof window.URI_PREFIX === 'string' || "";
+__webpack_public_path__ = prefix + '/static/react_example/';
+
 render(<App/>, $('#app').get(0));
