@@ -40,8 +40,8 @@ Further Info
 
 For more documentation on how to create a django web app and development have a look at:
 
-1. `CreateApp <https://www.openmicroscopy.org/site/support/omero5/developers/Web/CreateApp.html>`_
-2. `Deployment <https://www.openmicroscopy.org/site/support/omero5/developers/Web/Deployment.html>`_
+1. `CreateApp <https://docs.openmicroscopy.org/latest/omero/developers/Web/CreateApp.html>`_
+2. `Deployment <https://docs.openmicroscopy.org/latest/omero/developers/Web/Deployment.html>`_
 
 For further help/documentation on the frameworks used please consult their project sites:
 
