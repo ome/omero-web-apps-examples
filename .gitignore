@@ -1,4 +1,6 @@
 build
 node_modules
-static
+aurelia-webpack/aurelia_example/static
+backbone-grunt/backbone_example/static
+react-babel/react_example/static
 *.pyc
