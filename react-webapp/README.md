@@ -1,6 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## OMERO webapp example
 
-## Available Scripts
+This project is an OMERO.web example app created with [Create React App](https://github.com/facebook/create-react-app).
+
+You can run this project in development mode or as an OMERO.web Django app.
+
+The notes below are largely from `Create React App` but have been updated with
+changes made to connect to OMERO in dev or production modes.
 
 In the project directory, you can run:
 
@@ -12,20 +17,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app will try to connect to an OMERO.web server at http://localhost:4080
+using an existing session.<br>
+You will need to be logged-in to http://localhost:4080/webclient.<br>
+To use a different server, edit `dev_omeroweb_index` in `src/index.js`.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
+Builds the app for production to the `build` folder and copies the
+html and static files to the Django app in `react_webapp`.<br>
+
+The app will be run as an OMERO.web app at e.g. http://localhost:4080/react_webapp/.<br>
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run eject`
 
