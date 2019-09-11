@@ -20,7 +20,7 @@ You will also see any lint errors in the console.
 The app will try to connect to an OMERO.web server at http://localhost:4080
 using an existing session.<br>
 You will need to be logged-in to http://localhost:4080/webclient.<br>
-To use a different server, edit `dev_omeroweb_index` in `src/index.js`.
+To use a different server, edit `dev_omeroweb_index` in `public/index.html`.
 
 ### `npm run build`
 

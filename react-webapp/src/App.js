@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <h1>Welcome to OMERO</h1>
         <p>
-            {projectsCount == undefined ? "Loading..." : (
+            {projectsCount === undefined ? "Loading..." : (
               `Total: ${projectsCount} projects`
             )}
         </p>

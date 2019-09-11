@@ -33,9 +33,10 @@ def index(request, conn=None, **kwargs):
     template = loader.get_template('react_webapp/index.html')
     html = template.render({}, request)
     omeroweb_index = reverse('index')
-    html.replace('http://localhost:4080/', omeroweb_index)
+    html = html.replace('OMEROWEB_INDEX = dev_omeroweb_index',
+                        'OMEROWEB_INDEX = "%s"' % omeroweb_index)
     # update links to static files
     static_dir = static.static('react_webapp/')
-    html = html.replace('href="/static', 'href="%s' % static_dir)
-    html = html.replace('src="/static', 'src="%s' % static_dir)
+    html = html.replace('href="/static/', 'href="%s' % static_dir)
+    html = html.replace('src="/static/', 'src="%s' % static_dir)
     return HttpResponse(html)
