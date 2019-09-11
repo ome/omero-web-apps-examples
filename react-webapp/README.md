@@ -7,6 +7,11 @@ You can run this project in development mode or as an OMERO.web Django app.
 The notes below are largely from `Create React App` but have been updated with
 changes made to connect to OMERO in dev or production modes.
 
+To get started:
+
+    $ cd react-webapp
+    $ npm install
+
 In the project directory, you can run:
 
 ### `npm start`
@@ -26,6 +31,10 @@ To use a different server, edit `dev_omeroweb_index` in `public/index.html`.
 
 Builds the app for production to the `build` folder and copies the
 html and static files to the Django app in `react_webapp`.<br>
+
+You will need to have the app configured in your OMERO.web install:
+
+    $ omero config append omero.web.apps '"react_webapp"'
 
 The app will be run as an OMERO.web app at e.g. http://localhost:4080/react_webapp/.<br>
 
