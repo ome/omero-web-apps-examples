@@ -20,11 +20,8 @@ from django.conf.urls import url
 
 from . import views
 
-print "IMPORTING urls.py..."
-
-urlpatterns = patterns(
-    'django.views.generic.simple',
+urlpatterns = [
 
     # index 'home page' of the app
     url(r'^$', views.index, name='index')
-)
+]
