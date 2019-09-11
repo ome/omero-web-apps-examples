@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
+
 import './App.css';
 
 function App() {
+
+  const [projectsCount, setProjectsCount] = useState(undefined);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    let projectsUrl = window.OMEROWEB_INDEX + "api/v0/m/projects/";
+    fetch(projectsUrl, {mode: 'cors', credentials: 'include'})
+    .then(rsp => rsp.json())
+    .then(data => {
+
+      let projectCount = data.meta.totalCount;
+      setProjectsCount(projectCount);
+      setProjects(data.data);
+    })
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <h1>Welcome to OMERO</h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+            {projectsCount == undefined ? "Loading..." : (
+              `Total: ${projectsCount} projects`
+            )}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <ul>
+          {
+            projects.map(p => (
+              <li key={p['@id']}>
+                {p.Name} (ID: {p['@id']})
+              </li>
+            ))
+          }
+        </ul>
     </div>
   );
 }
