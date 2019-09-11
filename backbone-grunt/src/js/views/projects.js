@@ -10,7 +10,7 @@ var ProjectsView = Backbone.View.extend({
         this.render();
 
         this.projects.fetch({
-            url: window.PARAMS.WEB_API + "/m/projects?limit=10",
+            url: window.PARAMS.WEB_API + "m/projects?limit=10",
             success: function(data) {
                 this.ready = true;
                 this.render();

@@ -14,7 +14,7 @@ __webpack_public_path__ = prefix + '/static/webpack_example/';
 
 // main code
 let $projects = $('#projects');
-let projectRequestUrl = window.PARAMS.WEB_API + "/m/projects?limit=10";
+let projectRequestUrl = window.PARAMS.WEB_API + "m/projects?limit=10";
 let successHandler = (response) => {
     if (response && Array.isArray(response.data)) {
         if (response.data.length === 0) $projects.html("Empty Project List");

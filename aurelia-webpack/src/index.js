@@ -37,7 +37,7 @@ export class Index  {
      * @memberof Index
      */
     attached() {
-        let projectRequestUrl = window.PARAMS.WEB_API + "/m/projects?limit=10";
+        let projectRequestUrl = window.PARAMS.WEB_API + "m/projects?limit=10";
         let successHandler = (response) => {
             if (response && Array.isArray(response.data)) {
                 this.projects = response.data;
