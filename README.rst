@@ -6,8 +6,8 @@ Examples of web apps for the following setups:
 1. aurelia (aurelia as MVC, webpack packaging and babel transpiling)
 2. backbone (grunt for building, no ecma2015 and higher)
 3. minimal example (no JavaScript dependencies or build steps)
-3. react (react.js, created using create-react-app)
-4. webpack (jquery only, webpack packaging and babel transpiling)
+4. react (react.js, created using create-react-app)
+5. webpack (jquery only, webpack packaging and babel transpiling)
 
 
 
