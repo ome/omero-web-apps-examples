@@ -20,16 +20,22 @@ from django.core.urlresolvers import reverse
 
 from omeroweb.decorators import login_required
 
-
+# login_required: if not logged-in, will redirect to webclient
+# login page. Then back to here, passing in the 'conn' connection
+# and other arguments **kwargs.
 @login_required()
 def index(request, conn=None, **kwargs):
 
+    # We can load data from OMERO via Blitz Gateway connection.
+    # See https://docs.openmicroscopy.org/latest/omero/developers/Python.html
     experimenter = conn.getUser()
-    api_url = reverse('api_base', kwargs={'api_version': 0})
-    
+
+    # A dictionary of data to pass to the html template
     context = {'firstName': experimenter.firstName,
                'lastName': experimenter.lastName,
-               'experimenterId': experimenter.id,
-               'api_url': api_url}
-    print 'contex', context
+               'experimenterId': experimenter.id}
+    # print can be useful for debugging, but remove in production
+    # print 'contex', context
+
+    # Render the html template and return the http response
     return render(request, 'minimal_webapp/index.html', context)
