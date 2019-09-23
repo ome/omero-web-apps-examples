@@ -23,5 +23,5 @@ from . import views
 urlpatterns = [
 
     # index 'home page' of the app
-    url(r'^$', views.index, name='index')
+    url(r'^$', views.index, name='minimal_webapp_index'),
 ]
