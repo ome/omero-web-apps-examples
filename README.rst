@@ -18,8 +18,11 @@ to run OMERO.web, connecting to a remote OMERO.server.
 Requirements
 ============
 
-* Docker or OMERO.web 5.4.x or newer.
-* Node.js 6 or higher (except for the 'minimal' example)
+You can install and run the ``omero-web`` server in a python
+virtual environment or via Docker.
+
+All the example apps (except for ``minimal_webapp``) use Node.js
+to build the JavaScript app and require Node.js 6 or higher.
 
 
 Clone this repository
@@ -30,6 +33,36 @@ Clone this examples repo to a location of your choice:
 ::
 
     $ git clone git@github.com:will-moore/omero-web-apps-examples.git
+
+
+Run your app with locally-installed OMERO.web
+---------------------------------------------
+
+If you have installed OMERO.web locally in a virtual environment as
+`described here <https://docs.openmicroscopy.org/latest/omero/developers/Web/Deployment.html>`_,
+you can ``pip install`` the example apps. NB: all examples apart from the ``minimal_webapp`` also
+require a JavaScript install and build steps. See the README for each example for more details.
+
+To install ``minimal_webapp``::
+
+    # within your python venv:
+    $ cd minimal-webapp
+    $ pip install -e .
+
+You also need to add your app to the :property:`omero.web.apps` setting:
+
+.. note::
+
+    Here we use single quotes around double quotes.
+
+::
+
+    $ bin/omero config append omero.web.apps '"minimal_webapp"'
+
+Now restart your ``omero-web`` server and go to
+`http://localhost:4080/minimal_webapp/ <http://localhost:4080/minimal_webapp/>`_
+in your browser.
+
 
 Run your app with OMERO.web in a Docker container
 -------------------------------------------------
@@ -78,40 +111,6 @@ that OMERO.web is starting and the static files from your app are being included
 
 Now go to `http://localhost:4080/minimal_webapp/ <http://localhost:4080/minimal_webapp/>`_
 in your browser.
-You should be redirected to the login screen and then back to the ``minimal_webapp``
-page which will display your Name and list your Projects.
-
-Run your app with locally-installed OMERO.web
----------------------------------------------
-
-If you have installed OMERO.web locally in a virtual environment
-(instead of using Docker), you can add a
-`path configuration file <https://docs.python.org/2/install/index.html#modifying-python-s-search-path>`_
-to the ``site-packages`` directory to allow the
-``minimal_webapp`` module to be imported.
-
-You need to specify the directory that *contains* ``minimal_webapp``
-(in this case it is the parent ``minimal-webapp`` directory) to
-be added to the ``sys.path``.
-
-::
-
-    # Find where your python is (run this within your venv)
-    $ which python
-    /absolute-path/to-your/Virtual/<env_name>/bin/python
-
-    # Create a path configuration file .pth in site-packages
-    $ echo /path/to/dir/omero-web-apps-examples/minimal-webapp >> /absolute-path/to-your/Virtual/<env_name>/lib/python2.7/site-packages/minimal_webapp.pth
-
-You also need to add your app to the :property:`omero.web.apps` setting:
-
-.. note::
-
-    Here we use single quotes around double quotes.
-
-::
-
-    $ bin/omero config append omero.web.apps '"minimal_webapp"'
 
 
 Build
