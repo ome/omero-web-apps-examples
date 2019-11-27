@@ -3,17 +3,12 @@ OMERO.web-apps-examples
 
 This template repository contains examples of OMERO.web apps for the following setups:
 
-1. aurelia (aurelia as MVC, webpack packaging and babel transpiling)
-2. backbone (grunt for building, no ecma2015 and higher)
-3. minimal example (no JavaScript dependencies or build steps)
-4. react (react.js, created using create-react-app)
-5. webpack (jquery only, webpack packaging and babel transpiling)
+1. minimal example (no JavaScript dependencies or build steps)
+2. react (react.js, created using create-react-app)
 
-See README in each one for more details.
+We will run the simplest example app below. This is called ``minimal_webapp``.
 
-Below we describe how to run in a development setup using Docker
-to run OMERO.web, connecting to a remote OMERO.server.
-
+See the ``react-webapp/README`` for details on building and installing that app.
 
 Requirements
 ============
@@ -21,8 +16,8 @@ Requirements
 You can install and run the ``omero-web`` server in a python
 virtual environment or via Docker.
 
-All the example apps (except for ``minimal_webapp``) use Node.js
-to build the JavaScript app and require Node.js 6 or higher.
+The ``react-webapp`` example app uses Node.js
+to build the JavaScript app and requires Node.js 6 or higher.
 
 
 Clone this repository
@@ -66,8 +61,6 @@ in your browser.
 
 Run your app with OMERO.web in a Docker container
 -------------------------------------------------
-
-We will run the simplest example app. This is called ``minimal_webapp``.
 
 The following walk-through uses `omero-web-docker <https://github.com/ome/omero-web-docker/>`_
 to run the app. Here we add ``minimal_webapp`` to the installed apps and map the
