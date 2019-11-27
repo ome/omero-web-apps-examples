@@ -6,7 +6,7 @@
     "prod": "webpack -p --config webpack.config.js --progress"
   },
   "dependencies": {
-    "jquery": "3.2.1"
+    "jquery": "3.4.1"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
