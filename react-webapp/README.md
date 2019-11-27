@@ -24,7 +24,8 @@ You will also see any lint errors in the console.
 
 The app will try to connect to an OMERO.web server at http://localhost:4080
 using an existing session.<br>
-You will need to be logged-in to http://localhost:4080/webclient.<br>
+You will need to have CORS enabled and
+to be logged-in to http://localhost:4080/webclient.<br>
 To use a different server, edit `dev_omeroweb_index` in `public/index.html`.
 
 ### `npm run build`
@@ -32,18 +33,20 @@ To use a different server, edit `dev_omeroweb_index` in `public/index.html`.
 Builds the app for production to the `build` folder and copies the
 html and static files to the Django app in `react_webapp`.<br>
 
+You also need to install the app into your `omero-web` environment:
+
+    $ cd react-webapp
+    $ pip install -e .
+
 You will need to have the app configured in your OMERO.web install:
 
     $ omero config append omero.web.apps '"react_webapp"'
 
 The app will be run as an OMERO.web app at e.g. http://localhost:4080/react_webapp/.<br>
 
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the Create React App section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm test`
 
