@@ -8,8 +8,6 @@ projectsUrl += '?owner=' + PARAMS.EXP_ID;
 
 fetch(projectsUrl).then(rsp => rsp.json())
     .then(data => {
-        console.log(data);
-
         let projectCount = data.meta.totalCount;
         let projects = data.data;
 
