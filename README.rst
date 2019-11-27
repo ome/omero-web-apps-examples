@@ -46,9 +46,7 @@ To install ``minimal_webapp``::
 
 You also need to add your app to the :property:`omero.web.apps` setting:
 
-.. note::
-
-    Here we use single quotes around double quotes.
+NB: Here we use single quotes around double quotes.
 
 ::
 
