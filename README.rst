@@ -13,7 +13,7 @@ See the ``react-webapp/README`` for details on building and installing that app.
 Requirements
 ============
 
-You can install and run the ``omero-web`` server in a python
+You can install and run the ``omero-web`` server in a Python
 virtual environment or via Docker.
 
 The ``react-webapp`` example app uses Node.js
@@ -63,7 +63,7 @@ Run your app with OMERO.web in a Docker container
 The following walk-through uses `omero-web-docker <https://github.com/ome/omero-web-docker/>`_
 to run the app. Here we add ``minimal_webapp`` to the installed apps and map the
 app directory to the ``site-packages`` directory in the Docker instance so that
-python can import our ``minimal_webapp`` module.
+python can import the ``minimal_webapp`` module.
 
 ::
 

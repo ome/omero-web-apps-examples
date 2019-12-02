@@ -35,7 +35,7 @@ def index(request, conn=None, **kwargs):
                'lastName': experimenter.lastName,
                'experimenterId': experimenter.id}
     # print can be useful for debugging, but remove in production
-    # print 'context', context
+    # print('context', context)
 
     # Render the html template and return the http response
     return render(request, 'minimal_webapp/index.html', context)
