@@ -77,7 +77,7 @@ python can import the ``minimal_webapp`` module.
     $ appdir=$(pwd)/minimal-webapp/minimal_webapp
 
     # Location within Docker instance we want to link the app, so it can be imported.
-    $ docker_appdir=/opt/omero/web/venv/lib/python2.7/site-packages/minimal_webapp
+    $ docker_appdir=/opt/omero/web/venv3/lib/python3.6/site-packages/minimal_webapp
 
     # This example config file installs "minimal_webapp". See the file for more details.
     $ config=$(pwd)/config.omero
@@ -86,7 +86,7 @@ python can import the ``minimal_webapp`` module.
     $ docker_config=/opt/omero/web/config/config.omero
 
     # Run docker container.
-    $ docker run -it --rm -e OMEROHOST=$host -p 4080:4080 -v $appdir:$docker_appdir -v $config:$docker_config openmicroscopy/omero-web-standalone
+    $ docker run -it --rm -e OMEROHOST=$host -p 4080:4080 -v $appdir:$docker_appdir -v $config:$docker_config openmicroscopy/omero-web-standalone:5.6.0-m4
 
 This will run Docker in the foreground, showing the output in your terminal and allowing you to
 kill the container with Ctrl-C. You should see the following lines in the output, indicating
@@ -95,8 +95,8 @@ that OMERO.web is starting and the static files from your app are being included
 ::
 
     ...
-    Copying '/opt/omero/web/venv/lib/python2.7/site-packages/minimal_webapp/static/minimal_webapp/app.css'
-    Copying '/opt/omero/web/venv/lib/python2.7/site-packages/minimal_webapp/static/minimal_webapp/app.js'
+    Copying '/opt/omero/web/venv3/lib/python3.6/site-packages/minimal_webapp/static/minimal_webapp/app.css'
+    Copying '/opt/omero/web/venv3/lib/python3.6/site-packages/minimal_webapp/static/minimal_webapp/app.js'
     ...
     Starting OMERO.web...
 
