@@ -10,6 +10,7 @@ config append omero.web.ui.top_links '["Minimal-Webapp", "minimal_webapp_index",
 config set omero.web.debug True
 
 # enable CORS so e.g. react-webapp can connect to OMERO.web on different origin
+# See https://docs.openmicroscopy.org/latest/omero/sysadmins/unix/install-web.html
 config append omero.web.apps '"corsheaders"'
 config append omero.web.middleware '{"index": 0.5, "class": "corsheaders.middleware.CorsMiddleware"}'
 config append omero.web.middleware '{"index": 10, "class": "corsheaders.middleware.CorsPostCsrfMiddleware"}'

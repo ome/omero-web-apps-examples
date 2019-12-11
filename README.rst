@@ -34,8 +34,8 @@ Run your app with locally-installed OMERO.web
 ---------------------------------------------
 
 If you have installed OMERO.web locally in a virtual environment as
-`described here <https://docs.openmicroscopy.org/latest/omero/developers/Web/Deployment.html>`_,
-you can ``pip install`` the example apps. NB: all examples apart from the ``minimal_webapp`` also
+`recommended here <https://docs.openmicroscopy.org/latest/omero/developers/Web/Deployment.html>`_,
+you can ``pip install`` the example apps. N.B. all examples apart from the ``minimal_webapp`` also
 require a JavaScript install and build steps. See the README for each example for more details.
 
 To install ``minimal_webapp``::
@@ -46,7 +46,7 @@ To install ``minimal_webapp``::
 
 You also need to add your app to the :property:`omero.web.apps` setting:
 
-NB: Here we use single quotes around double quotes.
+N.B. Here we use single quotes around double quotes.
 
 ::
 
