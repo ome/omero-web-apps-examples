@@ -27,7 +27,7 @@ Clone this examples repo to a location of your choice:
 
 ::
 
-    $ git clone git@github.com:will-moore/omero-web-apps-examples.git
+    $ git clone https://github.com/ome/omero-web-apps-examples.git
 
 
 Run your app with locally-installed OMERO.web
