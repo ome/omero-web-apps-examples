@@ -1,5 +1,5 @@
 OMERO.web-apps-examples
-=============
+=======================
 
 This template repository contains examples of OMERO.web apps for the following setups:
 
@@ -50,7 +50,7 @@ N.B. Here we use single quotes around double quotes.
 
 ::
 
-    $ bin/omero config append omero.web.apps '"minimal_webapp"'
+    $ omero config append omero.web.apps '"minimal_webapp"'
 
 Now restart your ``omero-web`` server and go to
 `http://localhost:4080/minimal_webapp/ <http://localhost:4080/minimal_webapp/>`_
@@ -73,7 +73,7 @@ python can import the ``minimal_webapp`` module.
     # The OMERO server we want to connect to.
     $ host=demo.openmicroscopy.org
 
-    # Path to the python module for the app.
+    # Path to the Python module for the app.
     $ appdir=$(pwd)/minimal-webapp/minimal_webapp
 
     # Location within Docker instance we want to link the app, so it can be imported.
@@ -85,7 +85,7 @@ python can import the ``minimal_webapp`` module.
     # Location within Docker instance we want to mount the config.
     $ docker_config=/opt/omero/web/config/config.omero
 
-    # Run docker container.
+    # Run Docker container.
     $ docker run -it --rm -e OMEROHOST=$host -p 4080:4080 -v $appdir:$docker_appdir -v $config:$docker_config openmicroscopy/omero-web-standalone:5.6.0-m4
 
 This will run Docker in the foreground, showing the output in your terminal and allowing you to
@@ -105,7 +105,7 @@ in your browser.
 
 
 Build
-============
+=====
 
 For building look at the READMEs of the respective setup/folder.
 To use one of them as a basis for your own web app just copy its contents
@@ -123,7 +123,7 @@ In particular the following folders/files need adjustments/renames:
 Further Info
 ============
 
-For more documentation on how to create a django web app and development have a look at:
+For more documentation on how to create a Django web app and development have a look at:
 
 1. `CreateApp <https://docs.openmicroscopy.org/latest/omero/developers/Web/CreateApp.html>`_
 2. `Deployment <https://docs.openmicroscopy.org/latest/omero/developers/Web/Deployment.html>`_
