@@ -17,7 +17,7 @@
 #
 
 from django.http import HttpResponse
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template import loader
 from django.templatetags import static
 
