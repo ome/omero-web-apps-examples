@@ -15,12 +15,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from django.conf.urls import url
+from django.urls import re_path
 
 from . import views
 
 urlpatterns = [
 
     # index 'home page' of the app
-    url(r'^$', views.index, name='index')
+    re_path(r'^$', views.index, name='index')
 ]
